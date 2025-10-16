@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-table{border-collapse:collapse; margin: 0 0 30px 30px; display: flex;
+table{border-collapse:collapse; margin: 0 0 30px 30px; 
 
 }
+.container{display: flex; flex-wrap: wrap; justify-content: center;}
 td{
     width:30px; height:10px; border:1px solid black;
     padding:20px;
@@ -17,12 +18,17 @@ td{
     </style>
 </head>
 <body>
-    <table id="cdv"></table>
-    <table id="cdv2"></table>
-    <table id="cdv3" ></table>
-    <table id="cdv4"></table>
-    <table id="cdv5"></table>
-    <table id="cdv6" ></table>
+    <div class="container">
+        <table id="cdv"></table>
+        <table id="cdv2"></table>
+        <table id="cdv3" ></table>
+        <table id="cdv4"></table>
+        <table id="cdv5"></table>
+        <table id="cdv6" ></table>
+        <table id="cdv7" ></table>
+        <table id="cdv8" ></table>
+    </div>
+
     <script>
 const cdv=document.getElementById('cdv')
 const cdv2=document.getElementById('cdv2')
@@ -30,16 +36,22 @@ const cdv3=document.getElementById('cdv3')
 const cdv4=document.getElementById('cdv4')
 const cdv5=document.getElementById('cdv5')
 const cdv6=document.getElementById('cdv6')
+const cdv7=document.getElementById('cdv7')
+const cdv8=document.getElementById('cdv8')
 let kod=''
 let kod2=' '
 let kod3=' '
 let kod4=' '
+let x
 let kod5=' '
+let kod6=' '
+let kod7=' '
+let kod8=' '
 for(let i=1;i<=5;i++){
     kod+='<tr>'
     for(let j=1;j<=5;j++){
 
-let x=(i>=j) ? j : ' '
+ x=(i>=j) ? j : ' '
 kod+=`<td>${x}</td>`
     }
         kod+='</tr>'
@@ -74,7 +86,48 @@ for(let i=0;i<=4;i++){
 }
 cdv4.innerHTML=kod4
 // 5th table
-
+for(let i=1;i<=5;i++){
+    kod5+='<tr>'
+    for(let j=1;j<=5;j++){
+       x=(j+i)%2==1 ? 1 : 0
+        kod5+= `<td>${x}</td>`
+    }
+    kod5+='</tr>'
+}
+cdv5.innerHTML=kod5
+// 6th table
+for(let i=1;i<=5;i++){
+    kod6+='<tr>'
+    for(let j=1;j<=5;j++){
+x++
+        kod6+= `<td>${x}</td>`
+    }
+    kod6+='</tr>'
+}
+cdv6.innerHTML=kod6
+// 7th table
+x=0
+for(let i=1;i<=5;i++){
+    kod7+='<tr>'
+    for(let j=1;j<=5;j++){
+x++
+        kod7+= `<td>${x%2==0 ? ' ': x }</td>`
+    }
+    kod7+='</tr>'
+}
+cdv7.innerHTML=kod7
+// 8th table
+x=0
+for(let i=1;i<=7;i++){
+    kod8+='<tr>'
+    for(let j=1;j<=7;j++){
+        if( x==j) x--
+ else x++
+        kod8+= `<td>${x}</td>`
+    }
+    kod8+='</tr>'
+}
+cdv8.innerHTML=kod8
     </script>
 </body>
 </html>
