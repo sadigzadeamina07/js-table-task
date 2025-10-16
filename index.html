@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table{border-collapse:collapse; margin: 0 0 30px 30px; display: flex;
+
+}
+td{
+    width:30px; height:10px; border:1px solid black;
+    padding:20px;
+
+}
+
+    </style>
+</head>
+<body>
+    <table id="cdv"></table>
+    <table id="cdv2"></table>
+    <table id="cdv3" ></table>
+    <table id="cdv4"></table>
+    <table id="cdv5"></table>
+    <table id="cdv6" ></table>
+    <script>
+const cdv=document.getElementById('cdv')
+const cdv2=document.getElementById('cdv2')
+const cdv3=document.getElementById('cdv3')
+const cdv4=document.getElementById('cdv4')
+const cdv5=document.getElementById('cdv5')
+const cdv6=document.getElementById('cdv6')
+let kod=''
+let kod2=' '
+let kod3=' '
+let kod4=' '
+let kod5=' '
+for(let i=1;i<=5;i++){
+    kod+='<tr>'
+    for(let j=1;j<=5;j++){
+
+let x=(i>=j) ? j : ' '
+kod+=`<td>${x}</td>`
+    }
+        kod+='</tr>'
+}
+cdv.innerHTML=kod
+//2nd table
+
+for(let i=1;i<=5;i++){
+    kod2+='<tr>'
+    for(let j=1;j<=5;j++){
+kod2+=`<td>${j}</td>`
+    }
+        kod2+='</tr>'
+}
+cdv2.innerHTML=kod2 
+// 3rd table
+for(let i=1;i<=5;i++){
+    kod3+='<tr>'
+    for(let j=1;j<=5;j++){
+kod3+=`<td>${j % 2==1 ? j: ' '}</td>`
+    }
+        kod3+='</tr>'
+}
+cdv3.innerHTML=kod3
+// 4th table
+for(let i=0;i<=4;i++){
+    kod4+='<tr>'
+    for(let j=1;j<=5;j++){
+        kod4+= `<td>${i+j}</td>`
+    }
+    kod4+='</tr>'
+}
+cdv4.innerHTML=kod4
+// 5th table
+
+    </script>
+</body>
+</html>
