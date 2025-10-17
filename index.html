@@ -12,6 +12,7 @@ table{border-collapse:collapse; margin: 0 0 30px 30px;
 td{
     width:30px; height:10px; border:1px solid black;
     padding:20px;
+    font-size: 20px;
 
 }
 
@@ -26,7 +27,6 @@ td{
         <table id="cdv5"></table>
         <table id="cdv6" ></table>
         <table id="cdv7" ></table>
-        <table id="cdv8" ></table>
     </div>
 
     <script>
@@ -37,7 +37,6 @@ const cdv4=document.getElementById('cdv4')
 const cdv5=document.getElementById('cdv5')
 const cdv6=document.getElementById('cdv6')
 const cdv7=document.getElementById('cdv7')
-const cdv8=document.getElementById('cdv8')
 let kod=''
 let kod2=' '
 let kod3=' '
@@ -46,7 +45,6 @@ let x
 let kod5=' '
 let kod6=' '
 let kod7=' '
-let kod8=' '
 for(let i=1;i<=5;i++){
     kod+='<tr>'
     for(let j=1;j<=5;j++){
@@ -116,18 +114,6 @@ x++
     kod7+='</tr>'
 }
 cdv7.innerHTML=kod7
-// 8th table
-x=0
-for(let i=1;i<=7;i++){
-    kod8+='<tr>'
-    for(let j=1;j<=7;j++){
-        if( x==j) x--
- else x++
-        kod8+= `<td>${x}</td>`
-    }
-    kod8+='</tr>'
-}
-cdv8.innerHTML=kod8
     </script>
 </body>
 </html>
